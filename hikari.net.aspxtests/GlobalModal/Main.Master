@@ -1,0 +1,182 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="GlobalModal.Main" %>
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+    <!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+
+    <!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>    
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages/form_layouts.js"></script>
+    <script type="text/javascript" src="assets/js/pages/components_modals.js"></script>
+    <script type="text/javascript" src="assets/js/pages/form_select2.js"></script>
+    <!-- /theme JS files -->
+
+    <!-- Page related JS files -->
+    <script type="text/javascript" src="../js/Main.Master.js"></script>
+    <!-- /page related JS files -->
+
+    <script type="text/javascript">
+        var MainModalBoxID = "<%= this.modalMain.ClientID %>";
+        var MainModalTitleID = "<%= this.modalMainTitle.ClientID %>";
+        var MainModalBodyID = "<%= this.modalMainBody.ClientID %>";
+        var MainModalFooterID = "<%= this.modalMainFooter.ClientID %>";
+
+        var MainAlertBoxID = "<%= this.alertMain.ClientID %>";
+        var MainAlertHeaderID = "<%= this.alertMainHeader.ClientID %>";
+        var MainAlertBodyID = "<%= this.alertMainBody.ClientID %>";
+    </script>
+
+</head>
+
+<body class="navbar-top">
+    <form runat="server"> 
+        <!-- Main navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Dashboard.aspx"><h4 class="no-margin"><span class="text-black"><%= this.projectShortName %></span> - <span class="text-light"><%= this.projectDisplayName %></span></h4></a>
+
+                <ul class="nav navbar-nav visible-xs-block">
+                    <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                    <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar-mobile">
+                <ul class="nav navbar-nav">
+                    <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="text-bold">Cognome Nome</span> <span class="text-light">(Username)</span>
+                            <i class="caret"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" style="width:100%; background-color:inherit;">
+                            <li><a href="Profilo.aspx"><i class="icon-user"></i> Profilo</a></li>
+                            <li class="divider"></li>
+                            <li><asp:LinkButton ID="btnLogout" runat="server" onclick="btnLogout_Click"><i class="icon-switch2"></i> Logout</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /main navbar -->
+
+        <!-- Page container -->
+        <div class="page-container">
+
+            <!-- Page content -->
+            <div class="page-content">
+
+                <!-- Main sidebar -->
+                <div class="sidebar sidebar-main sidebar-fixed">
+                    <div class="sidebar-content ">
+
+                        <!-- Main navigation -->
+                        <div class="sidebar-category sidebar-category-visible">
+                            <div class="category-content no-padding">
+                                <ul class="navigation navigation-main navigation-accordion">
+                                    <li class="navigation-header"><span>Menu</span> <i class="icon-menu" title="Main pages"></i></li>
+                                    <li class="<%= GetCalssIfActive("Dashboard.aspx") %>"><a href="Dashboard.aspx"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                                    <li class="<%= GetCalssIfActive("Paziente.aspx") %>"><a href="Paziente.aspx"><i class="icon-user"></i> <span>Nuovo Paziente</span></a></li>
+                                    <li class="<%= GetCalssIfActive("Pazienti.aspx") %>"><a href="Pazienti.aspx"><i class="icon-search4"></i> <span>Cerca Paziente</span></a></li>
+                                    <li>
+                                        <a href="#"><i class="icon-calendar"></i> <span>Disponibilità</span></a>
+                                        <ul>
+                                            <li class="<%= GetCalssIfActive("Disponibilita.aspx?filter=100") %>"><a href="Disponibilita.aspx?filter=100">Esami Radiologici</a></li>
+                                            <li class="<%= GetCalssIfActive("Disponibilita.aspx?filter=200") %>"><a href="Disponibilita.aspx?filter=200">Esami di laboratorio</a></li>
+                                            <li class="<%= GetCalssIfActive("Disponibilita.aspx?filter=300") %>"><a href="Disponibilita.aspx?filter=300">Visite Specialistiche</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /main navigation -->
+
+                    </div>
+                </div>
+                <!-- /main sidebar -->
+
+                <!-- Main content -->
+                <div class="content-wrapper" id="content-PIC">
+
+                    <!-- Content area -->
+                    <div class="content">                        
+
+                        <!-- PUT THE MODAL HERE -->
+                        <div id="modalMain" class="modal fade" tabindex="-1" role="dialog" runat="server">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="modalMainTitle" runat="server"></h4>
+                                    </div>
+                                    <div class="modal-body" id="modalMainBody" runat="server"> </div>
+                                    <div class="modal-footer" id="modalMainFooter" runat="server"></div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+
+                        <!-- Main Alert Area -->
+                        <div class="row">
+                            <div id="alertMain" style="display:none" class="col-md-8 col-md-offset-2 alert " runat="server">
+                                <strong id="alertMainHeader" runat="server"></strong>
+                                <br/>
+                                <div id="alertMainBody" runat="server">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /main Alert Area -->
+
+                        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                        <asp:ContentPlaceHolder runat="server" ID="MainContent" />                        
+
+                        <!-- Footer -->
+					    <div class="footer text-center">
+						    <small>&copy; <%= this.devYear %> - <%: DateTime.Now.Year %>. <a href="<%= this.devCompanyWebSiteURL %>" target="_blank"><%= this.devCompanyName %></a></small>
+					    </div>
+					    <!-- /footer -->
+
+                    </div>
+                    <!-- /content area -->
+
+                </div>
+                <!-- /main content -->
+
+            </div>
+            <!-- /page content -->
+
+        </div>
+        <!-- /page container -->
+    </form>
+</body>
+
+</html>
