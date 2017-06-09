@@ -1,7 +1,63 @@
-﻿$(document).ready(function () {
-    //console.log("Si mi chiami");
-    //AlertShowSuccess("Siiii", "Funziono Dio Cane!");
-});
+﻿function ConfirmShowPostBack(title, message, cancelLabel, confirmLabel, postBackOp, postBackParams) {
+    bootbox.confirm({
+        title: title,
+        message: message,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> ' + cancelLabel
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> ' + confirmLabel
+            }
+        },
+        callback: function (result) {
+            if (result === true)
+                __doPostBack(postBackOp, postBackParams)
+        }
+    });
+}
+function ConfirmShow(title, message, cancelLabel, confirmLabel, clientCallback, clientCallbackParamsArray) {
+    bootbox.confirm({
+        title: title,
+        message: message,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> ' + cancelLabel
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> ' + confirmLabel
+            }
+        },
+        callback: function (result) {
+            if (result === true) {
+                if (clientCallbackParamsArray) {
+                    clientCallback.apply(null, clientCallbackParamsArray);
+                }
+                else {
+                    clientCallback();
+                }
+
+            }
+        }
+    });
+}
+
+function SimpleModalBootBoxShow(title, message) {
+    bootbox.alert({
+        title: title,
+        message: message,
+        backdrop: true,
+        buttons: {}
+    })
+}
+
+function SimpleModalBootBoxShowAuthoritative(title, message) {
+    bootbox.alert({
+        closeButton: false,
+        title: title,
+        message: message
+    })
+}
 
 function ModalShow() {
     var MainModalBox = $("#" + MainModalBoxID);

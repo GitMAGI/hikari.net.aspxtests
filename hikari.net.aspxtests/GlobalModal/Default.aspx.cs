@@ -13,7 +13,26 @@ namespace GlobalModal
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string btnName = Request["__EVENTTARGET"]; // btnSave
+            string parameter = Request["__EVENTARGUMENT"]; // parameter
+            switch (btnName)
+            {
+                case "btnShowAlertError":
+                    btnShowAlertError_click(this, EventArgs.Empty);
+                    break;
+                case "btnShowAlertInfo":
+                    btnShowAlertInfo_click(this, EventArgs.Empty);
+                    break;
+                case "btnShowAlertSuccess":
+                    btnShowAlertSuccess_click(this, EventArgs.Empty);
+                    break;
+                case "btnShowAlertWarning":
+                    btnShowAlertWarning_click(this, EventArgs.Empty);
+                    break;
+                case "btnHideAlert":
+                    btnHideAlert_click(this, EventArgs.Empty);
+                    break;
+            }
         }
 
 

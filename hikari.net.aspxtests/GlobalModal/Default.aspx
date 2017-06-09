@@ -7,6 +7,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
+    
+
     <h3>Chiamate Server Pure</h3>
 
     <button class="btn btn-danger" id="btnShowAlertError" runat="server" onserverclick="btnShowAlertError_click">Mostra errore (Server)</button>
@@ -37,4 +39,46 @@
     <button class="btn btn-success" id="clntShowAlertSuccess" onclick="AlertShowSuccess('Success JS puro!','Mesaggio messaggio messaggio.'); return false">Mostra success</button>
     <button class="btn btn-default" id="clntHideAlert" onclick="AlertResetAndHide(); return false">Nascondi Alert</button>
     
+    <br />
+    <br />
+
+    <h3>Chiamate Client Verso il Server <small>(Chiamata JS a __doPostBack('command','arguments')</small></h3>
+
+    <button class="btn btn-danger" id="clntShowAlertErrorServer" onclick="__doPostBack('btnShowAlertError','')">Mostra errore</button>
+    <button class="btn btn-warning" id="clntShowAlertWarningServer" onclick="__doPostBack('btnShowAlertWarning','')">Mostra warning</button>
+    <button class="btn btn-info" id="clntShowAlertInfoServer" onclick="__doPostBack('btnShowAlertInfo','')">Mostra info</button>
+    <button class="btn btn-success" id="clntShowAlertSuccessServer" onclick="__doPostBack('btnShowAlertSuccess','')">Mostra success</button>
+    <button class="btn btn-default" id="clntHideAlertServer" onclick="__doPostBack('btnHideAlert','')">Nascondi Alert</button>
+
+    <br />
+    <br />
+
+    <h3>Confirm! Chiamate Client Verso il Server <small>(Chiamata JS a __doPostBack('command','arguments')</small></h3>
+
+    <button class="btn btn-danger" id="clntShowAlertErrorServerConfirm" onclick="ConfirmShowPostBack('Attenzione!', 'Vuoi mostrare Alert Error?', 'No', 'Ok', 'btnShowAlertError', ''); return false;">Mostra errore</button>
+    <button class="btn btn-warning" id="clntShowAlertWarningServerConfirm" onclick="ConfirmShowPostBack('Attenzione!', 'Vuoi mostrare Alert Error?', 'No', 'Ok', 'btnShowAlertWarning', ''); return false;">Mostra warning</button>
+    <button class="btn btn-info" id="clntShowAlertInfoServerConfirm" onclick="ConfirmShowPostBack('Attenzione!', 'Vuoi mostrare Alert Error?', 'No', 'Ok', 'btnShowAlertInfo', ''); return false;">Mostra info</button>
+    <button class="btn btn-success" id="clntShowAlertSuccessServerConfirm" onclick="ConfirmShowPostBack('Attenzione!', 'Vuoi mostrare Alert Error?', 'No', 'Ok', 'btnShowAlertSuccess', ''); return false;">Mostra success</button>
+    <button class="btn btn-default" id="clntHideAlertServerConfirm" onclick="ConfirmShowPostBack('Attenzione!', 'Vuoi Nascondere Alert?', 'No', 'Ok', 'btnHideAlert', ''); return false;">Nascondi Alert</button>
+
+    
+    <br />
+    <br />
+
+    <h3>Confirm! Chiamate Client Pure</h3>
+
+    <button class="btn btn-danger" id="clntShowAlertErrorClientConfirm" onclick="ConfirmShow('Attenzione!', 'Vuoi mostrare Alert Error?', 'No', 'Ok', AlertShowError, ['Errore JS puro!', 'Mesaggio messaggio messaggio.']); return false;">Mostra errore</button>
+    <button class="btn btn-warning" id="clntShowAlertWarningClientConfirm" onclick="ConfirmShow('Attenzione!', 'Vuoi mostrare Alert Warning?', 'No', 'Ok', AlertShowWarning, ['Warning JS puro!', 'Mesaggio messaggio messaggio.']); return false;">Mostra warning</button>
+    <button class="btn btn-info" id="clntShowAlertInfoClientConfirm" onclick="ConfirmShow('Attenzione!', 'Vuoi mostrare Alert Info?', 'No', 'Ok', AlertShowInfo, ['Info JS puro!', 'Mesaggio messaggio messaggio.']); return false;">Mostra info</button>
+    <button class="btn btn-success" id="clntShowAlertSuccessClientConfirm" onclick="ConfirmShow('Attenzione!', 'Vuoi mostrare Alert Success?', 'No', 'Ok', AlertShowSuccess, ['Success JS puro!', 'Mesaggio messaggio messaggio.']); return false;">Mostra success</button>
+    <button class="btn btn-default" id="clntHideAlertClientConfirm" onclick="ConfirmShow('Attenzione!', 'Vuoi Nascondere Alert?', 'No', 'Ok', AlertResetAndHide); return false;">Nascondi Alert</button>
+
+    <br />
+    <br />
+
+    <h3>Alert e Modal</h3>
+    <button class="btn btn-default" id="clntShowSimpleAlert" onclick="SimpleModalBootBoxShow('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert</button>
+    <button class="btn btn-default" id="clntShowSimpleAlertAuthoritative" onclick="SimpleModalBootBoxShowAuthoritative('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert Obbligatrio</button>
+
+
 </asp:Content>
