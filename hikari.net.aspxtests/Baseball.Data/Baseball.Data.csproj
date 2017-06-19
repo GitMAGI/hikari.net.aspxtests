@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL.cs" />
-    <Compile Include="DAO\AbstractDAO.cs" />
     <Compile Include="DAO\ManagerDAO.cs" />
     <Compile Include="Entities\ManagerEntity.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />

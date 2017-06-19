@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace hikari.net.aspxtests.Baseball.Data.DAO
+namespace hikari.net.aspxtests.DataBaseUtilities
 {
     public class AbstractDAO<T>
     {

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDAO.cs" />
     <Compile Include="DBSQL.cs" />
     <Compile Include="EntityAttributes.cs" />
     <Compile Include="LibString.cs" />
