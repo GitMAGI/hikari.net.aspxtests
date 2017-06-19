@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace GlobalModal
+namespace hikari.net.aspxtests.GlobalModal
 {
     public class Global : System.Web.HttpApplication
     {

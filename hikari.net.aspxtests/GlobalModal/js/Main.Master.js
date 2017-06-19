@@ -1,4 +1,4 @@
-﻿function ConfirmShowPostBack(title, message, cancelLabel, confirmLabel, postBackOp, postBackParams) {
+﻿function ConfirmShowPostBack(title, message, confirmLabel, cancelLabel, postBackOp, postBackParams) {
     bootbox.confirm({
         title: title,
         message: message,
@@ -59,11 +59,18 @@ function SimpleModalBootBoxShowAuthoritative(title, message) {
     })
 }
 
-function ModalShow() {
+function ModalShow(titleHTML, bodyHTML, footerHTML) {
     var MainModalBox = $("#" + MainModalBoxID);
     var MainModalTitle = $("#" + MainModalTitleID);
     var MainModalBody = $("#" + MainModalBodyID);
     var MainModalFooter = $("#" + MainModalFooterID);
+
+    if (titleHTML)
+        MainModalTitle.html(titleHTML);
+    if (bodyHTML)
+        MainModalBody.html(bodyHTML);
+    if (footerHTML)
+        MainModalFooter.html(footerHTML);
 
     MainModalBox.modal({ show: false });
     MainModalBox.modal('show');

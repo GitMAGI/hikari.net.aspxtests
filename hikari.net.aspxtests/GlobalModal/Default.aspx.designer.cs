@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GlobalModal {
+namespace hikari.net.aspxtests.GlobalModal {
     
     
     public partial class Default {
@@ -108,9 +108,9 @@ namespace GlobalModal {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new GlobalModal.Main Master {
+        public new hikari.net.aspxtests.GlobalModal.Main Master {
             get {
-                return ((GlobalModal.Main)(base.Master));
+                return ((hikari.net.aspxtests.GlobalModal.Main)(base.Master));
             }
         }
     }

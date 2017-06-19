@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GlobalModal.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="hikari.net.aspxtests.GlobalModal.Default" %>
 <%@ MasterType VirtualPath="~/Main.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -77,8 +77,8 @@
     <br />
 
     <h3>Alert e Modal</h3>
-    <button class="btn btn-default" id="clntShowSimpleAlert" onclick="SimpleModalBootBoxShow('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert</button>
-    <button class="btn btn-default" id="clntShowSimpleAlertAuthoritative" onclick="SimpleModalBootBoxShowAuthoritative('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert Obbligatrio</button>
+    <button class="btn btn-default" id="clntShowSimpleModal" onclick="SimpleModalBootBoxShow('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert</button>
+    <button class="btn btn-default" id="clntShowSimpleModalAuthoritative" onclick="SimpleModalBootBoxShowAuthoritative('Attenzione!', 'Roba semplice ma funziona anche <i>HTML<i>'); return false;">Mostra SimpleAlert Obbligatrio</button>
 
 
 </asp:Content>

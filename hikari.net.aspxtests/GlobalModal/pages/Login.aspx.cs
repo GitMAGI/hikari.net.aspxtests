@@ -8,7 +8,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GlobalModal.pages
+namespace hikari.net.aspxtests.GlobalModal.pages
 {
     public partial class Login : System.Web.UI.Page
     {

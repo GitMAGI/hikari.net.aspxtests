@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GlobalModal {
+namespace hikari.net.aspxtests.GlobalModal {
     
     
     public partial class Main {

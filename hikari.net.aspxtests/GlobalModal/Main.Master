@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="GlobalModal.Main" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="hikari.net.aspxtests.GlobalModal.Main" %>
 
 <!DOCTYPE html>
 <html lang="it">

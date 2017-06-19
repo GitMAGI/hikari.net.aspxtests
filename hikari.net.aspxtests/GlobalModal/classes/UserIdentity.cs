@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 
-namespace GlobalModal.classes
+namespace hikari.net.aspxtests.GlobalModal.classes
 {
     public class UserIdentity : IIdentity
     {

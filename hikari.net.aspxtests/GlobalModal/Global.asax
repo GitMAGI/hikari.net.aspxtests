@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="GlobalModal.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="hikari.net.aspxtests.GlobalModal.Global" Language="C#" %>

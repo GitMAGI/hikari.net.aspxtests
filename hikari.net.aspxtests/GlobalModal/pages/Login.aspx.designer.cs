@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GlobalModal.pages {
+namespace hikari.net.aspxtests.GlobalModal.pages {
     
     
     public partial class Login {
